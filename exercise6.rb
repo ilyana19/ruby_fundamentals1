@@ -4,7 +4,7 @@ energy = 5
 while (true) #loop won't stop unless they go home
   puts "============================"
   puts "Pick an action:"
-  puts "\nWalk\nRun\nGo Home"
+  puts "\nWalk\nRun\nRest\nEat\nGo Home"
   puts "============================"
   action = gets.chomp.downcase #removing case sensitivity
   puts "~~~~~~~~~~~"
@@ -27,6 +27,16 @@ while (true) #loop won't stop unless they go home
       puts "\nCurrent energy: #{energy}"
       puts "Distance from home is #{distance}km."
     end
+  when "rest"
+    puts "You found a nice resting spot.".upcase
+    energy += 20
+    puts "\nCurrent energy: #{energy}"
+    puts "Distance from home is #{distance}km."
+  when "eat"
+    puts "You stopped to eat a snack".upcase
+    energy += 10
+    puts "\nCurrent energy: #{energy}"
+    puts "Distance from home is #{distance}km."
   when "go home"
     puts "You're going home!"
     break #exit the loop & program
